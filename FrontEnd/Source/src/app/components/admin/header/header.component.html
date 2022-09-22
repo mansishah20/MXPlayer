@@ -1,0 +1,27 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark defaultcolor">
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="user" class="nav-link">User</a>
+      </li>
+      
+      <li class="nav-item">
+        <a routerLink="../admin/category" class="nav-link">Category</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/language" class="nav-link">Language</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/video" class="nav-link">Video</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/movie" class="nav-link">Movie</a>
+      </li>
+
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>

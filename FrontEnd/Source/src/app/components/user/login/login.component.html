@@ -1,0 +1,60 @@
+<div class="w-50 mx-auto" id="login" style="text-align: center;">
+  <div>
+    <h4 class="text-center pt-4">Login to explore more features</h4>
+  </div>
+  <div class="">
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+      <div class="form-group m-2">
+        <input type="text" class="form-control" id="contact" required [(ngModel)]="signin.contact" name="contact"
+          placeholder="PHONE NUMBER" style="text-align:center;" #contact="ngModel">
+        <div class="alert alert-danger" role="alert" *ngIf="contact.errors && f.submitted">
+          Phone number is required!
+        </div>
+      </div>
+      <div class="form-group m-2">
+        <input type="password" class="form-control" id="password" [(ngModel)]="signin.password" name="contact"
+          placeholder="PASSWORD" minlength="4" required #password="ngModel" style="text-align:center;">
+        <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">
+            Password must be at least 4 characters
+          </div>
+        </div>
+      </div>
+      <div class="form-group m-2">
+        <button class="btn btn-primary form-control" style="text-align:center;">Login</button>
+      </div>
+      <div class="form-group">
+        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Logged in as {{ role }}.
+    </div>
+
+    <div class="d-block mt-1 text-primary" routerLink="/signup">
+      Sign up?
+    </div>
+    <div class="d-block mt-5" style="text-align:right;">
+      Terms & Privacy
+    </div>
+    <hr>
+    <div class="">
+      <h5>Download our mobile App</h5>
+      <div class="row">
+        <div class="col">
+          <a href="#">
+            <img src="../../../../assets/img/ios_app.png" class="img-thumbnail" alt="ios_app">
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <img src="../../../../assets/img/android_app.png" class="img-thumbnail" alt="android_app">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

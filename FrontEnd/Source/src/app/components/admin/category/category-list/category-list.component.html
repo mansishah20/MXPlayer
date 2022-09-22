@@ -1,0 +1,49 @@
+<div class="list row p-5">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control me-1"
+          placeholder="Search by Name"
+          [(ngModel)]="category_name"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-primary mx-1"
+            (click)="searchName()"
+          >
+            Search
+          </button>
+          <button
+            class="btn btn-outline-primary mx-1"
+            routerLink="../addcategory"
+          >
+            Add Category
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Category List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let cat of category; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveCategory(cat, i)"
+        >
+          {{ cat.id}} | {{ cat.category_name }}
+        </li>
+      </ul>
+  
+      <button class="my-3 btn btn-sm btn-danger" (click)="removeAllCategory()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <app-category-details
+        [viewMode]="true"
+        [currentCategory]="currentCategory"
+      ></app-category-details>
+    </div>
+  </div>

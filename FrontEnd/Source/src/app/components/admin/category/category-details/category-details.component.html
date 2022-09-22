@@ -1,0 +1,57 @@
+<div *ngIf="viewMode; else editable" class="p-4">
+    <div *ngIf="currentCategory.id">
+      <h4>Category</h4>
+      <div class="mb-2">
+        <label><strong>Name:</strong></label> {{ currentCategory.category_name }}
+      </div>
+      <button
+        class="btn btn-primary"
+        routerLink="../category/{{ currentCategory.id }}"
+      >
+        Edit
+      </button>
+    </div>
+  
+    <div *ngIf="!currentCategory">
+      <br />
+      <p>Please click on a Category...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable class="p-4 m-4">
+    <div *ngIf="currentCategory.id" class="edit-form container">
+      <h4>Category</h4>
+      <form class="m-1 mb-3">
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentCategory.category_name"
+            name="title"
+          />
+        </div>
+      </form>
+  
+      <button
+        type="submit"
+        class="btn bg-primary text-white m-1"
+        (click)="updateCategory()"
+      >
+        Update
+      </button>
+
+      <button class="btn bg-danger text-white m-1" (click)="deleteCategory()">
+        Delete
+      </button>
+  
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentCategory.id">
+      <br />
+      <p>Cannot access this Category...</p>
+    </div>
+  </ng-template>
+  

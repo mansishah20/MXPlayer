@@ -1,0 +1,23 @@
+<div class="p-4 container">
+  <div class="submit-form">
+    <div>
+      <form name="form" *ngIf="!submitted" (ngSubmit)="f.form.valid && saveCategory()" #f="ngForm" novalidate>
+        <div class="form-group m-1">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="title" required [(ngModel)]="category.category_name"
+            name="category_name" />
+        </div>
+        <button class="btn btn-primary my-2">Submit</button>
+        <div class="alert alert-warning" *ngIf="f.submitted">
+          Category not added!<br />{{ errorMessage }}
+        </div>
+      </form>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Category was submitted successfully!</h4>
+      <button class="btn btn-primary my-2 me-1" (click)="newCategory()">Add</button>
+      <button class="btn btn-primary my-2" routerLink="../category">View</button>
+    </div>
+  </div>
+</div>

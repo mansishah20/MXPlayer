@@ -1,0 +1,16 @@
+#playvideo {
+  margin-top: 150px;
+}
+#description {
+  height: 90px;
+  overflow: hidden;
+}
+.actordetails {
+   height: 53px;
+   overflow: clip;
+}
+.movieposter{
+   background-color:rgba(0,0,0,0.7);
+   height: 600px;
+   position: absolute;
+}

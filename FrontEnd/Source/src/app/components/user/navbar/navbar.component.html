@@ -1,0 +1,83 @@
+<div>
+  <nav class="navbar navbar-expand-sm defaultcolor navbar-dark fixed-top p-0">
+    <div class="container m-0 p-0">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="index.html"><img src="../../../assets/img/logo.png" class="logo" alt="MXPlayer"></a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="user/home" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item dropdown mr-3">
+            <a routerLink="user/webshow" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">WEB SHOWS</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" *ngFor="let temp of category">{{ temp.category_name }}</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown mr-3">
+            <a routerLink="user/movie" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">MOVIES</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" *ngFor="let temp of language">{{ temp.language_name }}</a>
+            </div>
+          </li>
+          <!-- <li class="nav-item dropdown mr-3">
+            <select routerLink="user/movie" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">MOVIES
+              <div class="dropdown-menu">
+                <option class="dropdown-item" *ngFor="let temp of language">{{ temp.language_name }}</option>
+              </div>
+            </select>
+          </li> -->
+        </ul>
+        <ul class="navbar-nav position-absolute end-0">
+
+          <li class="nav-item mr-3">
+            <a href="#" class="nav-link"><span class="fa fa-bell"></span></a>
+          </li>
+          <li class="nav-item mr-3">
+            <a href="#" class="nav-link"><span class="fa fa-search"></span></a>
+          </li>
+          <li class="nav-item mr-3">
+            <a routerLink="user/list" class="nav-link"><span class="fa fa-plus"></span>MY LIST</a>
+          </li>
+          <li class="nav-item mr-3" *ngIf="!isLogin()">
+            <a routerLink="../login" class="nav-link">LOGIN</a>
+          </li>
+          <li class="nav-item mr-3" *ngIf="isLogin()" (click)="logOut()">
+            <a routerLink="../login" class="nav-link">LOGOUT</a>
+          </li>          
+          <li class="nav-item mr-3">
+            <a href="#" class="nav-link"><img
+                src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932297/MXPlayer/data/logo2_lssaen.png"
+                class="logo2" alt="Go Add Free"></a>
+          </li>
+          <li class="nav-item mr-3">
+            <a href="#" class="nav-link"><span class="fa fa-gear"></span></a>
+          </li>
+        </ul>
+        <nav class="navbar navbar-expand navbar-dark defaultcolor">
+          <div class="navbar-nav mr-auto">
+            <li class="nav-item" *ngIf="checkuser()">
+              <a routerLink="../admin/category" class="nav-link">Category</a>
+            </li>
+            <li class="nav-item"  *ngIf="checkuser()">
+              <a routerLink="../admin/language" class="nav-link">Language</a>
+            </li>
+            <li class="nav-item"  *ngIf="checkuser()"> 
+              <a routerLink="../admin/video" class="nav-link">Video</a>
+            </li>
+            <li class="nav-item"  *ngIf="checkuser()">
+              <a routerLink="../admin/movie" class="nav-link">Movie</a>
+            </li>
+      
+          </div>
+        </nav>
+      </div>
+    </div>
+  </nav>
+  <div class="mt-5" >
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</div>

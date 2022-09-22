@@ -1,0 +1,199 @@
+<section class="m-1 mb-3">
+  <h3>Movies Worth Watching</h3>
+  <div class="card-group row">
+    <div class="card-container col-2" 
+          *ngFor="let temp of movieList" 
+          [routerLink]="['/user/watch-movie', temp.id]">
+      <div class="card-body">
+        <div class="img">
+          <img src="{{ temp.video?.thumbnail_path }}"
+            alt="{{ temp.video?.video_name }}">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>{{ temp.video?.video_name }}</h3>
+        </div>
+        <div class="card-details text-overflow">
+          {{ temp.category?.category_name }}, {{ temp.language?.language_name }}, {{ temp.video?.reales_year }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-1 mb-3">
+  <h3>Movies Worth Watching</h3>
+  <div class="card-group row">
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932297/MXPlayer/data/show1_rmgnwb.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659933854/MXPlayer/data/movie2_njs3ep.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659933854/MXPlayer/data/movie_vdh6gk.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932297/MXPlayer/data/show2_sh4do0.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659933854/MXPlayer/data/movie3_aicuey.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932386/MXPlayer/data/9_xw6uqz.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="m-1 mb-3">
+  <h3>MX Original Web Shows</h3>
+  <div class="card-group row">
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932297/MXPlayer/data/show2_sh4do0.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932386/MXPlayer/data/5_xjbzov.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932386/MXPlayer/data/9_xw6uqz.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932386/MXPlayer/data/8_gulppp.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932297/MXPlayer/data/show1_rmgnwb.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+    <div class="card-container col-2">
+      <div class="card-body">
+        <div class="img">
+          <img src="https://res.cloudinary.com/dn9lngvwk/image/upload/v1659932297/MXPlayer/data/show3_vzgemn.webp"
+            alt="show1">
+        </div>
+        <div class="card-header text-overflow">
+          <h3>Code B</h3>
+        </div>
+        <div class="card-details text-overflow">
+          Action, Hindi, 2019
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

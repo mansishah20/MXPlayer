@@ -1,0 +1,138 @@
+<div *ngIf="viewMode; else editable" class="p-4">
+    <div *ngIf="currentVideo.id">
+      <h4>Video</h4>
+      <div class="mb-2">
+        <label><strong>Name:</strong></label> {{ currentVideo.video_name }}<br>
+        <label><strong>description:</strong></label> {{ currentVideo.description }}<br>
+        <label><strong>type:</strong></label> {{ currentVideo.type }}<br>
+        <label><strong>rating:</strong></label> {{ currentVideo.rating }}<br>
+        <label><strong>reales_year:</strong></label> {{ currentVideo.reales_year }}<br>
+        <label><strong>watch_count:</strong></label> {{ currentVideo.watch_count }}<br>
+        <label><strong>thumbnail_path:</strong></label> {{ currentVideo.thumbnail_path }}<br>
+        <label><strong>video_path:</strong></label> {{ currentVideo.video_path }}<br>
+
+      </div>
+      <button
+        class="btn btn-primary"
+        routerLink="../video/{{ currentVideo.id }}"
+      >
+        Edit
+      </button>
+    </div>
+  
+    <div *ngIf="!currentVideo">
+      <br />
+      <p>Please click on a Video...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable class="p-4">
+    <div *ngIf="currentVideo.id" class="edit-form p-4 container">
+      <h4>Video</h4>
+      <form class="m-1 mb-3">
+        <div class="form-group m-1">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="currentVideo.video_name"
+            name="video_name"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentVideo.description"
+            name="description"
+          ></textarea>
+        </div>
+        <div class="form-group m-1">
+          <label for="type">Type</label>
+          <select class="form-control" name="type" [(ngModel)]="currentVideo.type" id="optiontype" required>
+            <option selected></option>
+            <option [ngValue]="temp" *ngFor="let temp of keys(video_types)">{{ temp }}</option>
+          </select>
+        </div>
+        <div class="form-group m-1">
+          <label for="rating">Rating</label>
+          <input
+            type="number"
+            class="form-control"
+            id="rating"
+            required
+            [(ngModel)]="currentVideo.rating"
+            name="rating"
+            min="0" max="10"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="reales_year">Reales Year</label>
+          <input
+            type="text"
+            class="form-control"
+            id="reales_year"
+            required
+            [(ngModel)]="currentVideo.reales_year"
+            name="reales_year"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="watch_count">Watch Count</label>
+          <input
+            type="number"
+            class="form-control"
+            id="watch_count"
+            required
+            [(ngModel)]="currentVideo.watch_count"
+            name="watch_count"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="thumbnail_path">Thumbnail Path</label>
+          <input
+            type="text"
+            class="form-control"
+            id="thumbnail_path"
+            required
+            [(ngModel)]="currentVideo.thumbnail_path"
+            name="thumbnail_path"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="type">Video Path</label>
+          <input
+            type="video_path"
+            class="form-control"
+            id="type"
+            required
+            [(ngModel)]="currentVideo.video_path"
+            name="video_path"
+          />
+        </div>
+      </form>
+  
+      <button
+        type="submit"
+        class="btn bg-primary text-white m-1"
+        (click)="updateVideo()"
+      >
+        Update
+      </button>
+
+      <button class="btn bg-danger text-white m-1" (click)="deleteVideo()">
+        Delete
+      </button>
+  
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentVideo.id">
+      <br />
+      <p>Cannot access this Video...</p>
+    </div>
+  </ng-template>
+  

@@ -1,0 +1,47 @@
+<div class="w-50 mx-auto" id="signup" style="text-align: center;">
+    <div>
+        <h4 class="text-center pt-4">Sign Up</h4>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group m-2">
+                <input type="text" class="form-control" id="name" [(ngModel)]="signup.name"
+                    name="name" placeholder="USER NAME" style="text-align:center;">
+            </div>
+            <div class="form-group m-2">
+                <input type="text" class="form-control" id="contact" [(ngModel)]="signup.contact"
+                    name="contact" placeholder="PHONE NUMBER" style="text-align:center;">
+            </div>
+            <div class="form-group m-2">
+                <input type="password" class="form-control" id="password" required [(ngModel)]="signup.password"
+                    name="contact" placeholder="PASSWORD" style="text-align:center;">
+            </div>
+            <div class="form-group m-2">
+                <input type="cnfpassword" required="" class="form-control" id="password" [(ngModel)]="cnfpassword"
+                    name="contact" placeholder="CONFIRM PASSWORD" style="text-align:center;">
+            </div>
+        </form>
+        <div class="form-group m-2">
+            <button class="btn btn-primary form-control" (click)="signUp()" style="text-align:center;">Sign Up</button>
+        </div>
+        <div class="d-block mt-5" style="text-align:right;">
+            Terms & Privacy
+        </div>
+        <hr>
+        <div class="">
+            <h5>Download our mobile App</h5>
+            <div class="row">
+                <div class="col">
+                    <a href="#">
+                        <img src="../../../../assets/img/ios_app.png" class="img-thumbnail" alt="ios_app">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <img src="../../../../assets/img/android_app.png" class="img-thumbnail" alt="android_app">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div *ngIf="viewMode; else editable" class="p-4">
+    <div *ngIf="currentLanguage.id">
+      <h4>Language</h4>
+      <div class="mb-2">
+        <label><strong>Name:</strong></label> {{ currentLanguage.language_name }}
+      </div>
+      <button
+        class="btn btn-primary"
+        routerLink="../language/{{ currentLanguage.id }}"
+      >
+        Edit
+      </button>
+    </div>
+  
+    <div *ngIf="!currentLanguage">
+      <br />
+      <p>Please click on a Language...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable class="p-4">
+    <div *ngIf="currentLanguage.id" class="edit-form container">
+      <h4>Language</h4>
+      <form class="m-1 mb-3">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentLanguage.language_name"
+            name="name"
+          />
+        </div>
+      </form>
+  
+      <button
+        type="submit"
+        class="btn bg-primary text-white m-1"
+        (click)="updateLanguage()"
+      >
+        Update
+      </button>
+
+      <button class="btn bg-danger text-white m-1" (click)="deleteLanguage()">
+        Delete
+      </button>
+  
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentLanguage.id">
+      <br />
+      <p>Cannot access this Language...</p>
+    </div>
+  </ng-template>
+  

@@ -1,0 +1,20 @@
+<div class="p-4 container">
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="title" required [(ngModel)]="language.language_name"
+                        name="language_name" />
+                </div>
+            </form>
+            <button (click)="saveLanguage()" class="btn btn-primary my-2">Submit</button>
+        </div>
+
+        <div *ngIf="submitted">
+            <h4>Language was submitted successfully!</h4>
+            <button class="btn btn-primary my-2 me-1" (click)="newLanguage()">Add</button>
+            <button class="btn btn-primary my-2" routerLink="../language">View</button>
+        </div>
+    </div>
+</div>

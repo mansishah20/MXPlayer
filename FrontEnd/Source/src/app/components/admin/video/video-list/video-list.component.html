@@ -1,0 +1,49 @@
+<div class="list row p-4">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control me-1"
+          placeholder="Search by Name"
+          [(ngModel)]="video_name"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-primary mx-1"
+            (click)="searchName()"
+          >
+            Search
+          </button>
+          <button
+            class="btn btn-outline-primary mx-1"
+            routerLink="../addvideo"
+          >
+            Add Video
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Video List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let temp of video; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveVideo(temp, i)"
+        >
+          {{ temp.id}} | {{ temp.video_name }}
+        </li>
+      </ul>
+  
+      <button class="my-3 btn btn-sm btn-danger" (click)="removeAllVideo()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <app-video-details
+        [viewMode]="true"
+        [currentVideo]="currentVideo"
+      ></app-video-details>
+    </div>
+  </div>

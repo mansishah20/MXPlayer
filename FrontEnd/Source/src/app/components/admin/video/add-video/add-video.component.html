@@ -1,0 +1,114 @@
+<div class="p-4 container">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <form>
+          <div class="form-group m-1">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              required
+              [(ngModel)]="video.video_name"
+              name="video_name"
+            />
+          </div>
+          <div class="form-group m-1">
+            <label for="description">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              [(ngModel)]="video.description"
+              name="description"
+            ></textarea>
+          </div>
+          <div class="form-group m-1">
+            <label for="type">Type</label>
+            <select class="form-control" name="type" [(ngModel)]="video.type" id="optiontype" required>
+              <option selected></option>
+              <option [ngValue]="temp" *ngFor="let temp of keys(video_types)">{{ temp }}</option>
+            </select>
+          </div>
+          <div class="form-group m-1">
+            <label for="rating">Rating</label>
+            <input
+              type="number"
+              class="form-control"
+              id="rating"
+              required
+              [(ngModel)]="video.rating"
+              name="rating"
+              min="0" max="10"
+            />
+          </div>
+          <div class="form-group m-1">
+            <label for="reales_year">Reales Year</label>
+            <input
+              type="text"
+              class="form-control"
+              id="reales_year"
+              required
+              [(ngModel)]="video.reales_year"
+              name="reales_year"
+            />
+          </div>
+          <div class="form-group m-1">
+            <label for="watch_count">Watch Count</label>
+            <input
+              type="number"
+              class="form-control"
+              id="watch_count"
+              required
+              [(ngModel)]="video.watch_count"
+              name="watch_count"
+            />
+          </div>
+          <!-- <div class="form-group m-1">
+            <label for="thumbnail_path">Thumbnail Path</label>
+            <input
+              type="text"
+              class="form-control"
+              id="thumbnail_path"
+              required
+              [(ngModel)]="video.thumbnail_path"
+              name="thumbnail_path"
+            />
+          </div> -->
+          <div class="form-group m-1">
+            <label for="thumbnail_path">Thumbnail Path</label>
+            <label>
+              <input
+                type="file"
+                class="form-control text-nowrap text-truncate"
+                id="thumbnail_path"
+                required
+                [(ngModel)]="video.thumbnail_path"
+                name="thumbnail_path"
+              />
+            </label>
+          </div>
+          <div class="form-group m-1">
+            <label for="type">Video Path</label>
+            <input
+              type="video_path"
+              class="form-control"
+              id="type"
+              required
+              [(ngModel)]="video.video_path"
+              name="video_path"
+            />
+          </div>
+
+        </form>
+
+        <button (click)="saveVideo()" class="btn btn-primary my-2">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Video was submitted successfully!</h4>
+        <button class="btn btn-primary my-2 me-1" (click)="newVideo()">Add</button>
+        <button class="btn btn-primary my-2" routerLink="../video">View</button>
+      </div>
+    </div>
+  </div>
+  

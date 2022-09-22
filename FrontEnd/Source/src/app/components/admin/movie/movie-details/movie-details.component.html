@@ -1,0 +1,147 @@
+<!-- <div *ngIf="viewMode; else editable"> -->
+    <div *ngIf="currentMovie.id" class="p-4">
+      <h4>Movie</h4>
+      <div class="mb-2">
+        <label><strong>Name:</strong></label> {{ currentMovie.video?.video_name }}<br/>
+        <label><strong>Category:</strong></label> {{ currentMovie.category?.category_name }}<br/>
+        <label><strong>Language:</strong></label> {{ currentMovie.language?.language_name }}<br/>
+        <label><strong>Description:</strong></label> {{ currentMovie.video?.description }}<br/>
+        <label><strong>Rating:</strong></label> {{ currentMovie.video?.rating }}<br/>
+        <label><strong>Reales Year:</strong></label> {{ currentMovie.video?.reales_year }}<br/>
+        <label><strong>Watch Count:</strong></label> {{ currentMovie.video?.watch_count }}<br/>
+        <label><strong>Thumbnail Path:</strong></label> {{ currentMovie.video?.thumbnail_path }}<br/>
+        <label><strong>Video Path:</strong></label> {{ currentMovie.video?.video_path }}<br/>
+      </div>
+      <button
+        class="btn btn-primary"
+        routerLink="../movie/{{ currentMovie.id }}"
+      >
+        Edit
+      </button>
+    </div>
+  
+    <div *ngIf="!currentMovie">
+      <br />
+      <p>Please click on a Movie...</p>
+    </div>
+  <!-- </div> -->
+<!--   
+  <ng-template #editable>
+    <div *ngIf="currentMovie.id" class="edit-form">
+      <h4>Movie</h4>
+      <form class="m-1 mb-3">
+        <div class="form-group m-1">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="video.video_name"
+            name="video_name"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="category">Category</label>
+          <select class="form-control" name="type" [(ngModel)]="movie.categoryId" id="categoryId" required>
+            <option selected></option>
+            <option [ngValue]="temp.id" *ngFor="let temp of category">{{ temp.category_name }}</option>
+          </select>
+        </div>
+        <div class="form-group m-1">
+          <label for="language">Language</label>
+          <select class="form-control" name="type" [(ngModel)]="movie.languageId" id="languageId" required>
+            <option selected></option>
+            <option [ngValue]="temp.id" *ngFor="let temp of language">{{ temp.language_name }}</option>
+          </select>
+        </div>
+        <div class="form-group m-1">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            [(ngModel)]="video.description"
+            name="description"
+          ></textarea>
+        </div>
+        <div class="form-group m-1">
+          <label for="rating">Rating</label>
+          <input
+            type="number"
+            class="form-control"
+            id="rating"
+            required
+            [(ngModel)]="video.rating"
+            name="rating"
+            min="0" max="10"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="reales_year">Reales Year</label>
+          <input
+            type="text"
+            class="form-control"
+            id="reales_year"
+            required
+            [(ngModel)]="video.reales_year"
+            name="reales_year"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="watch_count">Watch Count</label>
+          <input
+            type="number"
+            class="form-control"
+            id="watch_count"
+            required
+            [(ngModel)]="video.watch_count"
+            name="watch_count"
+          />
+        </div>
+        <div class="form-group m-1">
+          <label for="thumbnail_path">Thumbnail Path</label>
+          <label>
+            <input
+              type="file"
+              class="form-control text-nowrap text-truncate"
+              id="thumbnail_path"
+              required
+              [(ngModel)]="video.thumbnail_path"
+              name="thumbnail_path"
+            />
+          </label>
+        </div>
+        <div class="form-group m-1">
+          <label for="type">Video Path</label>
+          <input
+            type="video_path"
+            class="form-control"
+            id="type"
+            required
+            [(ngModel)]="video.video_path"
+            name="video_path"
+          />
+        </div>
+      </form>
+  
+      <button
+        type="submit"
+        class="btn bg-primary text-white m-1"
+        (click)="updateMovie()"
+      >
+        Update
+      </button>
+
+      <button class="btn bg-danger text-white m-1" (click)="deleteMovie()">
+        Delete
+      </button>
+  
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentMovie.id">
+      <br />
+      <p>Cannot access this Movie...</p>
+    </div>
+  </ng-template>
+   -->

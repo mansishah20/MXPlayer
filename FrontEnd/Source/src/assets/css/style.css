@@ -1,0 +1,21 @@
+.logo {
+    height: 50px;
+    width: 140px;
+    padding: 7px;
+    margin:0px;
+}
+.logo2{
+    height: 25px;
+    width: 100px;
+}
+.dropdown-toggle::after {
+    content: none;
+}
+.card-header{
+    background-color: white;
+    
+}
+
+.defaultcolor{
+    background-color: #3c8cf0;
+}
